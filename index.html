@@ -82,7 +82,7 @@ a{color:inherit}
 }
 #cover .cover-photo{
   position:absolute;inset:0;z-index:-2;
-  background:url('images/web/cover.jpg') center/cover no-repeat;
+  background:url('Images/web/cover.jpg') center/cover no-repeat;
   transform:scale(1.08);animation:kb 14s ease-in-out infinite alternate;
 }
 #cover .cover-veil{
@@ -302,7 +302,7 @@ a{color:inherit}
 #reveal.fade{opacity:0;transition:opacity 1.1s ease}
 #reveal .rv-photo{
   position:absolute;inset:0;z-index:-2;
-  background:url('images/web/cover.jpg') center/cover no-repeat;
+  background:url('Images/web/cover.jpg') center/cover no-repeat;
   transform:scale(1.15);animation:rvkb 3.4s ease-out forwards;
 }
 @keyframes rvkb{from{transform:scale(1.15)}to{transform:scale(1)}}
@@ -319,7 +319,7 @@ a{color:inherit}
 @keyframes rvline{to{width:220px}}
 
 /* ---------- hero background ---------- */
-#hero .hero-photo{position:absolute;inset:0;z-index:0;background:url('images/web/cover.jpg') center/cover no-repeat;opacity:.16}
+#hero .hero-photo{position:absolute;inset:0;z-index:0;background:url('Images/web/cover.jpg') center/cover no-repeat;opacity:.16}
 #hero .hero-veil{position:absolute;inset:0;z-index:0;background:linear-gradient(160deg,rgba(69,10,10,.55),rgba(92,15,15,.35) 55%,rgba(69,10,10,.6))}
 
 /* ---------- real portraits ---------- */
@@ -477,9 +477,9 @@ a{color:inherit}
 <!-- ============ COVER / REVEAL ============ -->
 <div id="cover">
   <div class="cover-photo"></div><div class="cover-veil"></div>
-  <img class="lamp-img" src="images/web/lamp.png" alt="Nilavilakku — traditional lamp" />
+  <img class="lamp-img" src="Images/web/lamp.png" alt="Nilavilakku — traditional lamp" />
   <div class="cover-frame">
-    <img class="ganesh-img" src="images/web/ganesh.png" alt="Lord Ganesha" />
+    <img class="ganesh-img" src="Images/web/ganesh.png" alt="Lord Ganesha" />
     <div class="blessing">With the blessings of the Almighty</div>
     <h1>Arun <span class="amp">&amp;</span> Saritha</h1>
     <div class="mal-names mal">അരുൺ &#8226; സരിത</div>
@@ -493,8 +493,8 @@ a{color:inherit}
 <div id="reveal">
   <div class="rv-photo"></div><div class="rv-veil"></div>
   <div class="rv-inner">
-    <img class="lamp-img" src="images/web/lamp.png" alt="Nilavilakku — traditional lamp" />
-    <img class="ganesh-img" src="images/web/ganesh.png" alt="Lord Ganesha" />
+    <img class="lamp-img" src="Images/web/lamp.png" alt="Nilavilakku — traditional lamp" />
+    <img class="ganesh-img" src="Images/web/ganesh.png" alt="Lord Ganesha" />
     <div class="rv-bless">With the blessings of the Almighty</div>
     <h1>Arun <span class="amp">&amp;</span> Saritha</h1>
     <div class="rv-mal mal">അരുൺ &#9082; സരിത</div>
@@ -568,7 +568,7 @@ a{color:inherit}
     <h2 class="sec-title">Two Souls, One Journey</h2>
     <div class="couple">
       <div class="person">
-        <div class="portrait"><img src="images/web/groom.jpg" alt="Arun — the groom" /></div>
+        <div class="portrait"><img src="Images/web/groom.jpg" alt="Arun — the groom" /></div>
         <div class="role">The Groom</div>
         <h3>Arun</h3>
         <div class="mal">അരുൺ</div>
@@ -577,7 +577,7 @@ a{color:inherit}
       </div>
       <div class="amp">&amp;</div>
       <div class="person">
-        <div class="portrait bride"><img src="images/web/bride.jpg" alt="Saritha — the bride" /></div>
+        <div class="portrait bride"><img src="Images/web/bride.jpg" alt="Saritha — the bride" /></div>
         <div class="role">The Bride</div>
         <h3>Saritha</h3>
         <div class="mal">സരിത</div>
@@ -782,8 +782,8 @@ a{color:inherit}
 
 <!-- ============ FOOTER ============ -->
 <footer id="footer">
-  <img class="ganesh-img" src="images/web/ganesh.png" alt="Lord Ganesha" />
-  <img class="lamp-img" src="images/web/lamp.png" alt="Nilavilakku — traditional lamp" />
+  <img class="ganesh-img" src="Images/web/ganesh.png" alt="Lord Ganesha" />
+  <img class="lamp-img" src="Images/web/lamp.png" alt="Nilavilakku — traditional lamp" />
   <div class="eyebrow" style="color:var(--gold-soft);margin-top:1rem">With Gratitude</div>
   <h2>Arun <span class="amp">&amp;</span> Saritha</h2>
   <div class="mal">അരുൺ &#9082; സരിത</div>
@@ -899,7 +899,7 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 })();
 
 /* ---------- Gallery + Lightbox ---------- */
-const PHOTOS=['SAI01975','SAI01988','SAI02009','SAI02030','SAI02048','SAI02058','SAI02065','SAI02076','SAI02080','SAI02087','SAI02101','SAI02127','SAI02136','SAI02190','SAI02192','SAI02195','SAI02204','SAI02210','SAI02252','SAI02258','SAI02263','SAI02264','SAI02275','SAI02317','SAI02335'].map(n=>'images/web/'+n+'.jpg');
+const PHOTOS=['SAI01975','SAI01988','SAI02009','SAI02030','SAI02048','SAI02058','SAI02065','SAI02076','SAI02080','SAI02087','SAI02101','SAI02127','SAI02136','SAI02190','SAI02192','SAI02195','SAI02204','SAI02210','SAI02252','SAI02258','SAI02263','SAI02264','SAI02275','SAI02317','SAI02335'].map(n=>'Images/web/'+n+'.jpg');
 const galEl=document.getElementById('gallery');
 PHOTOS.forEach((src,i)=>{
   const t=document.createElement('div');
