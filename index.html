@@ -93,12 +93,24 @@ a{color:inherit}
 }
 @keyframes kb{to{transform:scale(1.18)}}
 #cover.hide{opacity:0;visibility:hidden;pointer-events:none}
-.cover-frame{background:rgba(69,10,10,.28);backdrop-filter:blur(2px)}
+/* frosted-glass panel for the Open Invitation region */
 .cover-frame{
-  border:1px solid rgba(201,162,75,.5);
-  padding:3.2rem 2.4rem;border-radius:4px;
+  background:linear-gradient(150deg,rgba(255,240,210,.16),rgba(69,10,10,.26));
+  backdrop-filter:blur(16px) saturate(1.25);-webkit-backdrop-filter:blur(16px) saturate(1.25);
+  box-shadow:0 12px 44px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.28),inset 0 0 60px rgba(0,0,0,.18);
+}
+/* cinematic letterbox bars during the reveal */
+.rbar{position:absolute;left:0;right:0;height:13vh;background:#000;z-index:5;transition:transform 1s cubic-bezier(.7,0,.2,1)}
+.rbar.top{top:0;transform:translateY(-100%)}
+.rbar.bottom{bottom:0;transform:translateY(100%)}
+#reveal.on .rbar.top{transform:translateY(0)}
+#reveal.on .rbar.bottom{transform:translateY(0)}
+#reveal.fade .rbar.top{transform:translateY(-100%)}
+#reveal.fade .rbar.bottom{transform:translateY(100%)}
+.cover-frame{
+  border:1px solid rgba(255,240,210,.35);
+  padding:3.2rem 2.4rem;border-radius:18px;
   max-width:460px;position:relative;
-  box-shadow:0 0 60px rgba(0,0,0,.35) inset;
 }
 .cover-frame::before,.cover-frame::after{
   content:"❋";position:absolute;color:var(--gold);font-size:1.1rem;opacity:.8;
@@ -113,7 +125,10 @@ a{color:inherit}
 #cover .date{margin-top:1.3rem;letter-spacing:.35em;font-size:.95rem;color:var(--gold-bright)}
 .tap-btn{
   margin:2rem auto 0;display:inline-flex;align-items:center;justify-content:center;
-  background:transparent;border:1px solid var(--gold);
+  background:linear-gradient(150deg,rgba(255,240,210,.18),rgba(255,240,210,.06));
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  border:1px solid rgba(236,206,133,.6);
+  box-shadow:0 6px 22px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.3);
   color:var(--gold-bright);font-family:'Marcellus',serif;letter-spacing:.22em;text-indent:.22em;
   text-transform:uppercase;font-size:.75rem;padding:.9rem 2.2rem;border-radius:40px;
   cursor:pointer;transition:.4s;position:relative;overflow:hidden;line-height:1;
@@ -482,7 +497,7 @@ a{color:inherit}
     <img class="ganesh-img" src="Images/web/ganesh.png" alt="Lord Ganesha" />
     <div class="blessing">With the blessings of the Almighty</div>
     <h1>Arun <span class="amp">&amp;</span> Saritha</h1>
-    <div class="mal-names mal">അരുൺ - സരിത</div>
+    <div class="mal-names mal">അരുൺ &#9829; സരിത</div>
     <div class="date">04 &middot; 09 &middot; 2026</div>
   </div>
   <button class="tap-btn" id="openBtn">Open Invitation</button>
@@ -492,12 +507,13 @@ a{color:inherit}
 <!-- ============ WELCOME REVEAL ============ -->
 <div id="reveal">
   <div class="rv-photo"></div><div class="rv-veil"></div>
+  <div class="rbar top"></div><div class="rbar bottom"></div>
   <div class="rv-inner">
     <img class="lamp-img" src="Images/web/lamp.png" alt="Nilavilakku — traditional lamp" />
     <img class="ganesh-img" src="Images/web/ganesh.png" alt="Lord Ganesha" />
     <div class="rv-bless">With the blessings of the Almighty</div>
     <h1>Arun <span class="amp">&amp;</span> Saritha</h1>
-    <div class="rv-mal mal">അരുൺ &#9082; സരിത</div>
+    <div class="rv-mal mal">അരുൺ &#9829; സരിത</div>
     <div class="rv-line"></div>
     <div class="rv-date">04 &middot; 09 &middot; 2026</div>
   </div>
@@ -510,7 +526,7 @@ a{color:inherit}
   <div class="content">
     <div class="blessing">Together with our families</div>
     <h1>Arun <span class="amp">weds</span> Saritha</h1>
-    <div class="mal-names mal">അരുൺ &#9082; സരിത</div>
+    <div class="mal-names mal">അരുൺ &#9829; സരിത</div>
     <div class="meta">
       Friday &middot; 4 September 2026
       <span class="mal">1202 ചിങ്ങം 19 &middot; വെള്ളിയാഴ്ച</span>
@@ -538,7 +554,7 @@ a{color:inherit}
       </p>
       <div class="divider"><span>&#10048;</span></div>
       <p class="mal" style="color:var(--rose);font-size:1.15rem">
-        1202 ചിങ്ങം 19, വെള്ളിയാഴ്ച &middot; ചൊറ്റാനിക്കര ദേവി ക്ഷേത്രം
+        1202 ചിങ്ങം 19, വെള്ളിയാഴ്ച &middot; ചോറ്റാനിക്കര ദേവി ക്ഷേത്രം
       </p>
     </div>
   </div>
@@ -688,14 +704,14 @@ a{color:inherit}
     <div class="event" style="margin-top:2.8rem">
       <div class="map-wrap">
         <iframe loading="lazy" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3597.1163208282605!2d76.3199523!3d9.9581626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b087320d769a153%3A0x61b99fb26c78e4f1!2sSt.%20Raphel's%20Parish%20Hall!5e1!3m2!1sen!2sin!4v1785520250373!5m2!1sen!2sin"></iframe>
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3597.1163208282605!2d76.3199523!3d9.9581626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b087320d769a153%3A0x61b99fb26c78e4f1!2sSt.%20Raphel's%20Parish%20Hall!5e0!3m2!1sen!2sin!4v1785520250373!5m2!1sen!2sin"></iframe>
       </div>
       <div class="info">
         <div class="row"><span class="ic">&#128197;</span><div><div class="k">Date</div><div class="v">Sunday, 6 September 2026</div><div class="v mal" style="color:var(--gold-bright)">1202 ചിങ്ങം 21</div></div></div>
         <div class="row"><span class="ic">&#128336;</span><div><div class="k">Time</div><div class="v">11:30 AM &ndash; 1:30 PM</div></div></div>
         <div class="row"><span class="ic">&#127963;</span><div><div class="k">Venue</div><div class="v">St. Raphael's Parish Hall</div><div class="v" style="font-size:.95rem">Thykoodam, Kochi, Kerala</div></div></div>
         <a class="btn-gold" target="_blank" rel="noopener"
-           href="https://maps.app.goo.gl/D9L8pNrYsu2V1PvZ8">Open in Google Maps</a>
+           href="https://maps.app.goo.gl/itzYpciMbqmJiqkZ7">Open in Google Maps</a>
       </div>
     </div>
   </div>
@@ -786,7 +802,7 @@ a{color:inherit}
   <img class="lamp-img" src="Images/web/lamp.png" alt="Nilavilakku — traditional lamp" />
   <div class="eyebrow" style="color:var(--gold-soft);margin-top:1rem">With Gratitude</div>
   <h2>Arun <span class="amp">&amp;</span> Saritha</h2>
-  <div class="mal">അരുൺ &#9082; സരിത</div>
+  <div class="mal">അരുൺ &#9829; സരിത</div>
   <p>We seek your presence and blessings as we begin this beautiful new chapter of our lives together.</p>
   <p style="letter-spacing:.15em;color:var(--gold-bright)">Friday, 4 September 2026 &middot; 1202 ചിങ്ങം 19</p>
   <div class="credit">Made with love &#10047; Arun &amp; Saritha</div>
@@ -811,7 +827,7 @@ a{color:inherit}
 
 <script>
 /* ---------- RSVP endpoint: paste your Google Apps Script Web App URL here ---------- */
-const RSVP_ENDPOINT = ""; // e.g. "https://script.google.com/macros/s/AKfy...../exec"
+const RSVP_ENDPOINT = "https://script.google.com/macros/s/AKfycbwOTt7no7NhXpeUPsnwskuVRC57SI0TSkfWY28YRpRcWrcKQ0EpGpb5nzYpa7I7fwWz/exec";
 
 /* ---------- Cover reveal ---------- */
 const cover = document.getElementById('cover');
@@ -942,18 +958,16 @@ form.addEventListener('submit',async(e)=>{
   };
   if(!data.name){ msg.textContent='Please enter your name.'; return; }
   btn.textContent='Sending…'; btn.disabled=true;
+  // always keep a local backup so nothing is ever lost
+  try{ const saved=JSON.parse(localStorage.getItem('rsvps')||'[]'); saved.push(data); localStorage.setItem('rsvps',JSON.stringify(saved)); }catch(_){}
   try{
     if(RSVP_ENDPOINT){
       await fetch(RSVP_ENDPOINT,{
         method:'POST',
         mode:'no-cors',
-        headers:{'Content-Type':'text/plain;charset=utf-8'},
-        body:JSON.stringify(data)
+        headers:{'Content-Type':'application/x-www-form-urlencoded;charset=UTF-8'},
+        body:new URLSearchParams(data).toString()
       });
-    } else {
-      // fallback: keep locally so nothing is lost before the sheet is connected
-      const saved=JSON.parse(localStorage.getItem('rsvps')||'[]');
-      saved.push(data); localStorage.setItem('rsvps',JSON.stringify(saved));
     }
     form.style.display='none';
     msg.innerHTML = data.attending==='Joyfully Accept'
